@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3f3f46;
+    border-radius: 20px;
+}
+
+/* Font Family Utility */
+.font-manrope {
+    font-family: 'Manrope', sans-serif;
+}
+
+/* Logo Animation Utilities */
+.reveal-text {
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s ease;
+}
+
+/* Prevent scroll during intro */
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Floating Menu Active State */
+.nav-item.active div {
+    width: 24px;
+    background-color: #e4e4e7;
+}
+
+.nav-item.active span {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Smooth fade transitions for pages */
+.fade-enter {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Animated Gradient Background */
+.animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 3s ease infinite;
+}
+
+@keyframes gradient-x {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Staggered Text Animation */
+.word-reveal {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(10px);
+    animation: text-reveal-anim 0.8s cubic-bezier(0.2, 0.65, 0.3, 0.9) forwards;
+}
+
+@keyframes text-reveal-anim {
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+/* Highlight Text Animation */
+.highlight-text {
+    background: linear-gradient(120deg, #a1a1aa 0%, #2563eb 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Background Gradient Blob */
+.gradient-blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(229, 231, 235, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+    top: -20%;
+    right: -20%;
+    z-index: -1;
+    opacity: 0.6;
+    animation: blob-float 10s ease-in-out infinite alternate;
+}
+
+@keyframes blob-float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-30px, 40px);
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes loading-progress {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
