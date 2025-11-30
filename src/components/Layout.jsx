@@ -6,9 +6,29 @@ const Layout = () => {
     const location = useLocation();
     const [isLoaded, setIsLoaded] = useState(false);
 
-    // Scroll to top on route change
+    // Scroll to top on route change and update title
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+        // Dynamic Page Titles
+        const path = location.pathname;
+        const baseTitle = "Belal Haidary";
+
+        if (path === '/') {
+            document.title = `${baseTitle} | Healthcare & Radiology IT | Karisma RIS Administration`;
+        } else if (path === '/profile') {
+            document.title = `${baseTitle} | Profile`;
+        } else if (path === '/profile/achievements') {
+            document.title = `${baseTitle} | Work Achievements`;
+        } else if (path === '/projects') {
+            document.title = `${baseTitle} | Projects`;
+        } else if (path === '/blog') {
+            document.title = `${baseTitle} | Blog`;
+        } else if (path === '/contact') {
+            document.title = `${baseTitle} | Contact`;
+        } else {
+            document.title = baseTitle;
+        }
     }, [location.pathname]);
 
     useEffect(() => {
