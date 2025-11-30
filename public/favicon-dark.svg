@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <filter id="white-text">
+    <!-- Invert colors: Black becomes White, Alpha stays same -->
+    <feColorMatrix type="matrix" values="-1 0 0 0 1 
+                                         0 -1 0 0 1 
+                                         0 0 -1 0 1 
+                                         0 0 0 1 0"/>
+  </filter>
+  <image href="/logo.png" width="512" height="512" filter="url(#white-text)" />
+</svg>
