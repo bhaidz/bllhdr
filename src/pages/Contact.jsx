@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Mail, MessageSquare, ArrowRight } from 'lucide-react';
 import ChatBot from '../components/ChatBot';
 
 const Contact = () => {
+    // Force scroll to top on mobile to prevent auto-scroll to chatbot
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }, []);
+
     return (
         <div className="page-section w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <section className="pb-8">
+            <section className="pb-8 scroll-mt-24">
                 <div className="grid lg:grid-cols-2 gap-8 items-start">
                     {/* Left Column: Headlines & Copy & Direct Contact */}
                     <div className="space-y-6">

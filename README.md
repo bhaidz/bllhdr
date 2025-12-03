@@ -1,16 +1,43 @@
-# React + Vite
+# Portfolio Website - Belal Haidary
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website showcasing my professional experience, technical skills, and personal projects.
 
-Currently, two official plugins are available:
+## 🎯 Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This portfolio serves as a comprehensive showcase of:
+- **Professional Experience**: Detailed work history in Healthcare IT, DevOps, and Radiology systems
+- **Technical Skills**: Proficiency in RIS/PACS, HL7 integrations, SQL Server, cloud technologies
+- **Personal Projects**: Side projects demonstrating web development and technical capabilities
+- **Work Achievements**: Key accomplishments and highlights from my career
+- **Resume**: Interactive PDF viewer with downloadable CV
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 18 with Vite
+- **Styling**: Tailwind CSS with custom animations
+- **Routing**: React Router DOM
+- **Icons**: Lucide React
+- **Backend**: PHP for contact form handling
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Modern, minimalist UI/UX design
+- Responsive layout for all devices
+- Custom intro animation sequence
+- Interactive chatbot for contact inquiries
+- PDF resume viewer
+- SEO optimized with meta tags, Open Graph, and JSON-LD schema
+- Sitemap and robots.txt for search engines
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+```

@@ -49,9 +49,9 @@ const Profile = () => {
                     Accomplished Healthcare IT Engineer and DevOps/SRE with 4+ years supporting mission-critical radiology systems. Combines a Radiography background with hands-on experience across RIS/PACS, HL7 integrations, SQL Server, and observability tooling to improve reliability, performance, and workflows at scale.
                 </p>
                 <div className="flex gap-4">
-                    <a href="mailto:belal@bllhdr.com.au" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full transition-all bg-black text-white hover:bg-neutral-800">
+                    <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full transition-all bg-black text-white hover:bg-neutral-800">
                         Contact Me
-                    </a>
+                    </Link>
                     <button
                         onClick={() => setShowResume(true)}
                         className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full transition-all border border-neutral-200 text-neutral-700 hover:bg-neutral-100"

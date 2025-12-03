@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { Linkedin, Mail, Database, Activity, Server } from 'lucide-react';
+import { Linkedin, Mail, Database, Activity, Server, Menu, X, Github } from 'lucide-react';
 
 const Layout = () => {
     const location = useLocation();
     const [isLoaded, setIsLoaded] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     // Scroll to top on route change and update title
     useEffect(() => {
@@ -111,10 +112,77 @@ const Layout = () => {
                 <NavLink to="/" className="pointer-events-auto group flex items-center gap-2">
                     <img src="/logo.png" alt="bllhdr - Belal Haidary Logo" className="h-20 transition-transform duration-300 group-hover:scale-105" />
                 </NavLink>
+                {/* Mobile Menu Button */}
+                <button
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    className="2xl:hidden pointer-events-auto absolute right-6 top-1/2 -translate-y-1/2 p-2 text-neutral-700 hover:text-blue-600 transition-colors"
+                    aria-label="Toggle menu"
+                >
+                    {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
             </nav>
 
+            {/* Mobile Navigation Drawer */}
+            <div className={`2xl:hidden fixed inset-0 z-50 transition-all duration-300 ${mobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}>
+                {/* Backdrop */}
+                <div
+                    className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                />
+
+                {/* Menu Panel */}
+                <div className={`absolute top-0 right-0 h-full w-64 bg-white shadow-2xl transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                    <div className="flex flex-col h-full p-6 pt-24">
+                        <nav className="flex flex-col gap-4">
+                            <NavLink
+                                to="/"
+                                onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); setMobileMenuOpen(false); }}
+                                className={({ isActive }) => `text-sm font-semibold uppercase tracking-wider py-3 px-4 rounded-lg transition-all ${isActive ? 'bg-blue-100 text-blue-600' : 'text-neutral-700 hover:bg-neutral-100'}`}
+                            >
+                                Home
+                            </NavLink>
+                            <NavLink
+                                to="/profile"
+                                onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); setMobileMenuOpen(false); }}
+                                className={({ isActive }) => `text-sm font-semibold uppercase tracking-wider py-3 px-4 rounded-lg transition-all ${isActive ? 'bg-blue-100 text-blue-600' : 'text-neutral-700 hover:bg-neutral-100'}`}
+                            >
+                                Profile
+                            </NavLink>
+                            <NavLink
+                                to="/profile/achievements"
+                                onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); setMobileMenuOpen(false); }}
+                                className={({ isActive }) => `text-xs font-semibold uppercase tracking-wider py-2 px-4 ml-4 rounded-lg transition-all ${isActive ? 'bg-blue-100 text-blue-600' : 'text-neutral-500 hover:bg-neutral-100'}`}
+                            >
+                                Work Achievements
+                            </NavLink>
+                            <NavLink
+                                to="/projects"
+                                onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); setMobileMenuOpen(false); }}
+                                className={({ isActive }) => `text-sm font-semibold uppercase tracking-wider py-3 px-4 rounded-lg transition-all ${isActive ? 'bg-blue-100 text-blue-600' : 'text-neutral-700 hover:bg-neutral-100'}`}
+                            >
+                                Projects
+                            </NavLink>
+                            <NavLink
+                                to="/blog"
+                                onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); setMobileMenuOpen(false); }}
+                                className={({ isActive }) => `text-sm font-semibold uppercase tracking-wider py-3 px-4 rounded-lg transition-all ${isActive ? 'bg-blue-100 text-blue-600' : 'text-neutral-700 hover:bg-neutral-100'}`}
+                            >
+                                Blog
+                            </NavLink>
+                            <NavLink
+                                to="/contact"
+                                onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); setMobileMenuOpen(false); }}
+                                className={({ isActive }) => `text-sm font-semibold uppercase tracking-wider py-3 px-4 rounded-lg transition-all ${isActive ? 'bg-blue-100 text-blue-600' : 'text-neutral-700 hover:bg-neutral-100'}`}
+                            >
+                                Contact
+                            </NavLink>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
             {/* Floating Right Side Menu */}
-            <aside className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col items-end gap-6 pointer-events-auto transition-opacity duration-1000 opacity-0" id="side-menu">
+            <aside className="hidden 2xl:flex fixed right-6 top-1/2 -translate-y-1/2 z-50 flex-col items-end gap-6 pointer-events-auto transition-opacity duration-1000 opacity-0" id="side-menu">
                 <NavLink to="/" className={({ isActive }) => `nav-item group flex items-center gap-3 ${isActive ? 'active' : ''}`}>
                     <span className="text-xs font-semibold uppercase tracking-wider transition-all duration-300 group-hover:text-blue-600 text-neutral-700">Home</span>
                     <div className="h-[2px] w-3 transition-all duration-300 group-hover:bg-blue-500 bg-neutral-400"></div>
@@ -174,6 +242,9 @@ const Layout = () => {
                                 <div className="flex gap-2 pt-1">
                                     <a href="https://au.linkedin.com/in/belal-haidary-031787269" target="_blank" className="p-2 transition-all border rounded-lg text-neutral-500 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 border-neutral-200 bg-white/50">
                                         <Linkedin className="w-4 h-4" />
+                                    </a>
+                                    <a href="https://github.com/bhaidz" target="_blank" rel="noopener noreferrer" className="p-2 transition-all border rounded-lg text-neutral-500 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 border-neutral-200 bg-white/50">
+                                        <Github className="w-4 h-4" />
                                     </a>
                                     <a href="mailto:belal@bllhdr.com.au" className="p-2 transition-all border rounded-lg text-neutral-500 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 border-neutral-200 bg-white/50">
                                         <Mail className="w-4 h-4" />

@@ -46,11 +46,20 @@ const Projects = () => {
                             <p className="text-sm text-neutral-500 leading-relaxed mb-4">
                                 Modern React portfolio built with Vite featuring custom animations, PDF resume viewer, and responsive design. Showcases professional experience and technical capabilities with clean UI/UX.
                             </p>
-                            <div className="flex gap-2 flex-wrap">
+                            <div className="flex gap-2 flex-wrap mb-4">
                                 <span className="px-2 py-1 text-[10px] uppercase font-semibold rounded bg-blue-100 text-blue-700">React</span>
                                 <span className="px-2 py-1 text-[10px] uppercase font-semibold rounded bg-blue-100 text-blue-700">Vite</span>
                                 <span className="px-2 py-1 text-[10px] uppercase font-semibold rounded bg-blue-100 text-blue-700">Tailwind CSS</span>
                             </div>
+                            <a
+                                href="https://github.com/bhaidz/bllhdr"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                            >
+                                <Code2 className="w-4 h-4" />
+                                View on GitHub
+                            </a>
                         </div>
                     </div>
 

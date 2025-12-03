@@ -16,6 +16,7 @@ const ChatBot = () => {
         message: ''
     });
     const messagesEndRef = useRef(null);
+    const isInitialMount = useRef(true);
 
     const scrollToBottom = () => {
         // Only scroll within the chat container, not the entire page
@@ -25,6 +26,11 @@ const ChatBot = () => {
     };
 
     useEffect(() => {
+        // Skip scrolling on initial mount to prevent page scroll on mobile
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+            return;
+        }
         scrollToBottom();
     }, [messages]);
 
