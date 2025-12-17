@@ -1,9 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { TrendingUp, Activity, Database, Zap, Shield } from 'lucide-react';
 
 const Projects = () => {
     return (
         <div className="page-section w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <Helmet>
+                <title>Work Highlights | Karisma RIS & Healthcare IT Projects</title>
+                <meta name="description" content="Proven track record in Radiology Information System optimization, Karisma RIS upgrades, and Healthcare IT automation projects." />
+                <link rel="canonical" href="https://bllhdr.com.au/profile/achievements" />
+            </Helmet>
             <section className="pb-20 pt-4">
                 <h1 className="text-3xl sm:text-4xl tracking-tight mb-6 font-medium text-black">Work Highlights</h1>
                 <p className="text-lg text-neutral-500 max-w-xl leading-relaxed mb-12">

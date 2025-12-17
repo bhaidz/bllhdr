@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Download, X } from 'lucide-react';
 
 const Profile = () => {
@@ -7,6 +8,11 @@ const Profile = () => {
 
     return (
         <div className="page-section w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <Helmet>
+                <title>About Belal Haidary | Healthcare IT & Radiology Expert</title>
+                <meta name="description" content="Experienced Healthcare IT Engineer and Karisma RIS Administrator. Bridging the gap between clinical radiology workflows and technical health tech infrastructure." />
+                <link rel="canonical" href="https://bllhdr.com.au/profile" />
+            </Helmet>
             {/* Resume Modal */}
             {showResume && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">

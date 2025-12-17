@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight } from 'lucide-react';
 import { blogPosts } from '../data/blogPosts';
 
 const Blog = () => {
     return (
         <div className="page-section w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <Helmet>
+                <title>Radiology IT & Health Tech Blog | Belal Haidary</title>
+                <meta name="description" content="Insights on Radiology Information Systems (RIS), Cloud RIS, AI in Radiology, and the future of Healthcare IT." />
+                <link rel="canonical" href="https://bllhdr.com.au/blog" />
+            </Helmet>
             <section className="pb-20 pt-4">
                 <h1 className="text-3xl sm:text-4xl tracking-tight mb-6 font-medium text-black">Blog</h1>
                 <p className="text-lg text-neutral-500 max-w-xl leading-relaxed mb-12">

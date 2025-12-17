@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Mail, MessageSquare, ArrowRight } from 'lucide-react';
 import ChatBot from '../components/ChatBot';
 
@@ -10,6 +11,11 @@ const Contact = () => {
 
     return (
         <div className="page-section w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <Helmet>
+                <title>Contact Belal Haidary | Radiology IT Consultant</title>
+                <meta name="description" content="Connect with Belal Haidary for Karisma RIS support, Radiology IT consulting, and Health Tech innovation strategies." />
+                <link rel="canonical" href="https://bllhdr.com.au/contact" />
+            </Helmet>
             <section className="pb-8 scroll-mt-24">
                 <div className="grid lg:grid-cols-2 gap-8 items-start">
                     {/* Left Column: Headlines & Copy & Direct Contact */}

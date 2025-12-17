@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useOutletContext } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Code, Briefcase, BookOpen } from 'lucide-react';
 
 const Home = () => {
@@ -7,6 +8,11 @@ const Home = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center px-6">
+            <Helmet>
+                <title>Belal Haidary | Radiology IT & Karisma RIS Consultant</title>
+                <meta name="description" content="Belal Haidary: Expert Radiology IT Engineer and Health Tech consultant. Specializing in Karisma Radiology Information System (RIS) administration, PACS, and Healthcare IT solutions." />
+                <link rel="canonical" href="https://bllhdr.com.au/" />
+            </Helmet>
             <div className="max-w-4xl mx-auto text-center space-y-12">
                 {/* Hero Section */}
                 <div className="space-y-10 pt-10 relative overflow-visible">
