@@ -7,7 +7,7 @@ const Profile = () => {
     const [showResume, setShowResume] = useState(false);
 
     return (
-        <div className="page-section w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <main className="page-section w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
             <Helmet>
                 <title>About Belal Haidary | Healthcare IT & Radiology Expert</title>
                 <meta name="description" content="Experienced Healthcare IT Engineer and Karisma RIS Administrator. Bridging the gap between clinical radiology workflows and technical health tech infrastructure." />
@@ -154,7 +154,7 @@ const Profile = () => {
 
                 </div>
             </section>
-        </div>
+        </main>
     );
 };
 

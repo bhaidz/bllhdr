@@ -4,7 +4,7 @@ import { Globe, Code2, Layout } from 'lucide-react';
 
 const Projects = () => {
     return (
-        <div className="page-section w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <main className="page-section w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
             <Helmet>
                 <title>Personal Projects | Belal Haidary</title>
                 <meta name="description" content="Showcase of web development, homelab infrastructure, and technical projects." />
@@ -92,7 +92,7 @@ const Projects = () => {
 
                 </div>
             </section>
-        </div>
+        </main>
     );
 };
 

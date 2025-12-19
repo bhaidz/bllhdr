@@ -7,7 +7,7 @@ const Home = () => {
     const { isLoaded } = useOutletContext();
 
     return (
-        <div className="min-h-screen flex items-center justify-center px-6">
+        <main className="min-h-screen flex items-center justify-center px-6">
             <Helmet>
                 <title>Belal Haidary | Radiology IT & Karisma RIS Consultant</title>
                 <meta name="description" content="Belal Haidary: Expert Radiology IT Engineer and Health Tech consultant. Specializing in Karisma Radiology Information System (RIS) administration, PACS, and Healthcare IT solutions." />
@@ -104,7 +104,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     );
 };
 

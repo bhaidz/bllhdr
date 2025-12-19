@@ -6,7 +6,7 @@ import { blogPosts } from '../data/blogPosts';
 
 const Blog = () => {
     return (
-        <div className="page-section w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <main className="page-section w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
             <Helmet>
                 <title>Radiology IT & Health Tech Blog | Belal Haidary</title>
                 <meta name="description" content="Insights on Radiology Information Systems (RIS), Cloud RIS, AI in Radiology, and the future of Healthcare IT." />
@@ -71,7 +71,7 @@ const Blog = () => {
                     </p>
                 </div>
             </section>
-        </div>
+        </main>
     );
 };
 
