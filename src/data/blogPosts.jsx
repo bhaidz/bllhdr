@@ -8,7 +8,7 @@ export const blogPosts = [
         title: "Bridging Tech and Strategy: My Transition into Product Management",
         date: "February 19, 2026",
         icon: <Briefcase className="w-6 h-6 text-blue-600" />,
-        image: "/images/blog/pm-transition.png",
+        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2070",
         summary: "Reflecting on the pivot from Radiology IT to Product Management. Discussing the misconceptions of the role, the challenge of stakeholder alignment, and leveraging domain expertise to build innovative healthcare products.",
         content: (
             <div className="space-y-4 text-neutral-700 leading-relaxed">
