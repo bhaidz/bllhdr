@@ -1,7 +1,54 @@
 import React from 'react';
-import { Cloud, Activity, Hash, ExternalLink } from 'lucide-react';
+import { Cloud, Activity, Hash, ExternalLink, Briefcase } from 'lucide-react';
 
 export const blogPosts = [
+    {
+        id: 5,
+        slug: "transition-to-pm",
+        title: "Bridging Tech and Strategy: My Transition into Product Management",
+        date: "February 19, 2026",
+        icon: <Briefcase className="w-6 h-6 text-blue-600" />,
+        image: "/images/blog/pm-transition.png",
+        summary: "Reflecting on the pivot from Radiology IT to Product Management. Discussing the misconceptions of the role, the challenge of stakeholder alignment, and leveraging domain expertise to build innovative healthcare products.",
+        content: (
+            <div className="space-y-4 text-neutral-700 leading-relaxed">
+                <p>
+                    In January, I embarked on a journey that marks a significant pivot in my career: stepping into the role of <strong>Product Management</strong>.
+                </p>
+                <p>
+                    To be completely honest, when I was first approached for the role, I was somewhat clueless about what a Product Manager actually was. My immediate assumption was that "Manager" implied managing people or a team. As someone who has always preferred the technical and collaborative side of work over direct people management, that prospect didn't exactly excite me.
+                </p>
+                <p>
+                    I've since discovered that most people outside of tech (and many within it!) don't really know what a PM does. It turns out, I’m not "managing" people in the traditional hierarchical sense. Instead, I’m coordinating, collaborating, and aligning different colleagues and teams toward a shared vision. It’s about managing the <em>product's</em> success, not the people’s timesheets.
+                </p>
+                <p>
+                    After over eight years deep in the trenches of Radiology IT—managing RIS/PACS, navigating HL7 integrations, and optimizing technical infrastructure—this transition feels both exhilarating and profoundly different.
+                </p>
+                <p>
+                    <strong>A Different Kind of Management</strong><br />
+                    Coming from a technical background, I was used to managing systems, databases, and deployments. Product management, however, is a different beast entirely. It’s less about "How do we build the pipe?" and more about "Why are we building this specific pipe in the first place, and who benefits most?"
+                </p>
+                <p>
+                    The shift to the "management side" of things has been a steep learning curve. In these first two months, I’ve had to get accustomed to:
+                </p>
+                <ul className="list-disc pl-5 space-y-1">
+                    <li><strong>Stakeholder Alignment:</strong> Balancing the needs of clinical teams, executive leadership, and technical developers. It’s about finding the "sweet spot" where business value meets user needs.</li>
+                    <li><strong>Product Discovery:</strong> Moving beyond solving immediate technical bugs to identifying broader market opportunities.</li>
+                    <li><strong>Prioritization:</strong> In technical support, you try to solve everything. In PM, you have to ruthlessly prioritize the features that move the needle most.</li>
+                </ul>
+                <p>
+                    <strong>Leveraging the "Radiology IT" Edge</strong><br />
+                    While the responsibilities are new, my primary weapon remains my 8+ years of domain expertise. Having seen exactly where clinical workflows break down—from the radiographer’s console to the radiologist’s reporting station—I can see the "invisible friction" that users often can't articulate.
+                </p>
+                <p>
+                    My goal is to leverage this technical foundation to create a truly <strong>innovative radiology IT product</strong>. Specifically, I want to bridge the gap between the clinical reality and modern DevOps/SRE practices, bringing reliability and scalability to systems that have traditionally been "black boxes."
+                </p>
+                <p>
+                    The first couple of months have been about listening, learning, and shifting my mindset from <em>Solution Architect</em> to <em>Product Strategist</em>. It’s a challenge I’m relishing.
+                </p>
+            </div>
+        )
+    },
     {
         id: 1,
         slug: "ris-in-the-cloud",

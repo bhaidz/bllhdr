@@ -19,49 +19,51 @@ const Blog = () => {
                 </p>
 
                 <div className="grid gap-8 mb-16">
-                    {blogPosts.map((post) => (
-                        <Link
-                            key={post.id}
-                            to={`/blog/${post.slug}`}
-                            className="group block rounded-2xl border border-neutral-100 bg-white overflow-hidden hover:border-blue-200 hover:shadow-lg transition-all duration-300"
-                        >
-                            <div className="flex flex-col md:flex-row h-full">
-                                {/* Image Thumbnail (Desktop: Left, Mobile: Top) */}
-                                <div className="w-full md:w-1/3 h-48 md:h-auto overflow-hidden relative">
-                                    <img
-                                        src={post.image}
-                                        alt={post.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
-                                </div>
+                    {[...blogPosts]
+                        .sort((a, b) => new Date(b.date) - new Date(a.date))
+                        .map((post) => (
+                            <Link
+                                key={post.id}
+                                to={`/blog/${post.slug}`}
+                                className="group block rounded-2xl border border-neutral-100 bg-white overflow-hidden hover:border-blue-200 hover:shadow-lg transition-all duration-300"
+                            >
+                                <div className="flex flex-col md:flex-row h-full">
+                                    {/* Image Thumbnail (Desktop: Left, Mobile: Top) */}
+                                    <div className="w-full md:w-1/3 h-48 md:h-auto overflow-hidden relative">
+                                        <img
+                                            src={post.image}
+                                            alt={post.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                                    </div>
 
-                                {/* Content */}
-                                <div className="p-6 md:p-8 flex flex-col justify-between w-full md:w-2/3">
-                                    <div>
-                                        <div className="flex items-center gap-3 mb-3">
-                                            <div className="p-2 rounded-lg bg-blue-50 text-blue-600">
-                                                {post.icon}
+                                    {/* Content */}
+                                    <div className="p-6 md:p-8 flex flex-col justify-between w-full md:w-2/3">
+                                        <div>
+                                            <div className="flex items-center gap-3 mb-3">
+                                                <div className="p-2 rounded-lg bg-blue-50 text-blue-600">
+                                                    {post.icon}
+                                                </div>
+                                                <span className="text-sm text-neutral-500 font-medium">{post.date}</span>
                                             </div>
-                                            <span className="text-sm text-neutral-500 font-medium">{post.date}</span>
+
+                                            <h2 className="text-xl sm:text-2xl font-bold text-neutral-800 mb-3 group-hover:text-blue-600 transition-colors">
+                                                {post.title}
+                                            </h2>
+
+                                            <p className="text-neutral-500 leading-relaxed mb-4 line-clamp-2">
+                                                {post.summary}
+                                            </p>
                                         </div>
 
-                                        <h2 className="text-xl sm:text-2xl font-bold text-neutral-800 mb-3 group-hover:text-blue-600 transition-colors">
-                                            {post.title}
-                                        </h2>
-
-                                        <p className="text-neutral-500 leading-relaxed mb-4 line-clamp-2">
-                                            {post.summary}
-                                        </p>
-                                    </div>
-
-                                    <div className="flex items-center gap-2 text-blue-600 font-medium text-sm mt-auto">
-                                        Read Article <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                        <div className="flex items-center gap-2 text-blue-600 font-medium text-sm mt-auto">
+                                            Read Article <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </Link>
-                    ))}
+                            </Link>
+                        ))}
                 </div>
 
                 {/* AI Disclaimer */}
